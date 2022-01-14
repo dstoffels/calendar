@@ -16,7 +16,7 @@ class Calendar:
   def display_header(self):
     print(f'{self.month_name}, {self.year}')
     for day in DAYS_OF_WEEK:
-      self.days_of_the_week += day + self.three_spaces
+      self.days_of_the_week += day + self.two_spaces
     print(self.days_of_the_week)
 
   def display_dates(self):
@@ -39,7 +39,7 @@ class Calendar:
         else:
           line_to_be_printed += self.two_spaces
 
-        line_to_be_printed += self.three_spaces
+        line_to_be_printed += self.two_spaces
         col += 1
       print(line_to_be_printed)
 
