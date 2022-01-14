@@ -13,3 +13,6 @@
    a. Display dates from next/previous months in any open cells of a row.
    b. Change the text color for dates not in the current month, to make them appear 'greyed out'.
    c. Draw grid lines around each cell in the calendar's grid (VERY advanced, major refactor)
+
+4. Leap year
+   is leap_year = FALSE:
