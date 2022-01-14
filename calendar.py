@@ -1,9 +1,10 @@
-from constants import DAYS_OF_WEEK
+from ctypes import WinDLL
+from constants import DAYS_OF_WEEK, SAT, WED
 
 class Calendar:
   def __init__(self):
     self.days_of_the_week = ''
-    self.starting_day = ''
+    self.starting_day = SAT
     self.days_in_month = 31
     self.month_name = 'January'
     self.year = 2022
@@ -19,19 +20,30 @@ class Calendar:
     print(self.days_of_the_week)
 
   def display_dates(self):
-    self.first_row = ''
-    # for day in range (1,self.days_in_month + 1):
-    #   row_one = day + self. three_spaces
-    #   print()
-    for cell in range(1,43):
-      if cell < 10:
-        cell = ' ' + str(cell)
-    
-        
+    day = 1
+    starting_col = DAYS_OF_WEEK.index(self.starting_day)
+    start_counting = False  
+
+    while day <= self.days_in_month:
+      line_to_be_printed = ''
+      col = 0
+      while col < 7 and day <= self.days_in_month:
+        if col >= starting_col: start_counting = True
+
+        if start_counting:
+          if day < 10: 
+            line_to_be_printed += ' ' + str(day)
+          else: 
+            line_to_be_printed += str(day)
+          day += 1
+        else:
+          line_to_be_printed += self.two_spaces
+
+        line_to_be_printed += self.three_spaces
+        col += 1
+      print(line_to_be_printed)
 
 
-      
-    
 
 
   # def days_in_minth(  ):
@@ -43,5 +55,5 @@ class Calendar:
   def input_month_and_year(self):
     pass
 
-# Calendar().display_header()
+Calendar().display_header()
 Calendar().display_dates()

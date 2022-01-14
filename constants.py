@@ -1,8 +1,8 @@
-MON = 'M'
-TUE = 'T'
-WED = 'W'
+MON = 'MO'
+TUE = 'TU'
+WED = 'WE'
 THU = 'TH'
-FRI = 'F'
+FRI = 'FR'
 SAT = 'SA'
 SUN = 'SU'
 
